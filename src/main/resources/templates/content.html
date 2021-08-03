@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 	<head>
 		<meta charset="UTF-8">
 		<title>content</title>
 	</head>
 	<body>
-		<a href="/guest">guest</a>
-		<a href="/boss">boss</a>
-	
+<!--		没有相对应权限的用户直接不显示此内容-->
+		<a href="/guest" sec:authorize="hasRole('guest')">guest</a>
+		<a href="/boss" sec:authorize="hasRole('boss')">boss</a>
+		<a href="/logout">注销</a>
 	</body>
 </html>

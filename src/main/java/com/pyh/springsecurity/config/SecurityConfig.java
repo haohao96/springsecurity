@@ -18,7 +18,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/content").permitAll(); //
 //        开启没有权限时自动跳转的登录页面
         http.formLogin();
-
+        http.logout().logoutSuccessUrl("/content");
+        http.rememberMe();
     }
 
     @Override
