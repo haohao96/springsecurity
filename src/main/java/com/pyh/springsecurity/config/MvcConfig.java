@@ -11,6 +11,8 @@ public class MvcConfig implements WebMvcConfigurer {
 //        设置跳转页面
         registry.addViewController("/index").setViewName("index");
         registry.addViewController("/content").setViewName("content");
-        registry.addViewController("/boss").setViewName("index");
+        registry.addViewController("/boss").setViewName("boss");
+        registry.addViewController("/guest").setViewName("guest");
+
     }
 }
